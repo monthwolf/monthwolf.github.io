@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceComment": "会员登录可用！",
+    "bookSourceGroup": "饭饭",
+    "bookSourceName": "饭饭txt(无搜索)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://bbs.fanfanx.com/",
+    "customOrder": -2085979135,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "enabledReview": false,
+    "exploreUrl": "[\n{\"title\":\"青春言情\",\"url\":\"https://bbs.fanfanx.com/ff10-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"耽美闲情\",\"url\":\"https://bbs.fanfanx.com/ff117-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"轻松同人\",\"url\":\"https://bbs.fanfanx.com/ff191-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"魔幻网游\",\"url\":\"https://bbs.fanfanx.com/ff118-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\" 科幻悬推\",\"url\":\"https://bbs.fanfanx.com/ff62-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"文学之殿\",\"url\":\"https://bbs.fanfanx.com/ff60-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"精品推荐\",\"url\":\"https://bbs.fanfanx.com/ff216-{{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}}\n]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76\"\n}",
+    "lastUpdateTime": 1673281012631,
+    "loginCheckJs": "",
+    "loginUrl": "https://bbs.fanfanx.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "a.writer@text",
+      "coverUrl": "img@src",
+      "init": "<js>\njava.put(\"re\",result)\n//替换详细页网址\nvar pattern=/(<!--.*?<a href=\")(.*?)(\".*?在线阅读.*?-->)/g\npattern.test(result)\nvar list=book.origin+\"/\"+RegExp.$2\njava.put(\"list\",list)\njava.log(list)\nresult=java.connect(list).body()\n</js>",
+      "intro": "<js>\nresult=String(java.get(\"re\"))\nresult.replace(/<a.*?>|<\\/a>|<b>|<b .*?>|<\\/b>/g,\"\")\n</js>\tdiv#read_tpc@textNodes||div#read_tpc@font@html##http(s)?.*|<img.*|图片.*\n<js>\n//强迫症犯了，给爷全缩进\nresult=String(result)\nresult.replace(/(?!^\\s)/,\"\\t\")\n</js>",
+      "kind": "span.blue@text&&a.red.1@text##口-",
+      "name": "h1@em@text",
+      "tocUrl": "<js>\njava.get(\"list\")\n</js>",
+      "wordCount": "p@em:nth-of-type(1)@text&&p@cite:nth-of-type(1)@text##\\s*"
+    },
+    "ruleContent": {
+      "content": "div.read-content@html"
+    },
+    "ruleExplore": {
+      "author": "a.subject_t@text##.*作者：([\\u4e00-\\u9fa5\\w]*).*##$1",
+      "bookList": "tr:nth-of-type(n+8) td.subject",
+      "bookUrl": "a.subject_t@href",
+      "kind": "a.mr5.s4@text##\\[(.*?)\\]##$1",
+      "name": "a.subject_t@text##《(.*?)》.*##$1",
+      "wordCount": ""
+    },
+    "ruleReview": {},
+    "ruleSearch": {},
+    "ruleToc": {
+      "chapterList": "ul.cf@a",
+      "chapterName": "text",
+      "chapterUrl": "href##^##{{book.origin}}",
+      "preUpdateJs": ""
+    },
+    "weight": 0
+  }
+]
